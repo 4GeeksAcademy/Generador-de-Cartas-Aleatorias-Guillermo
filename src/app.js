@@ -26,8 +26,6 @@ const suitsNumberGenerator = () => {
     num.classList.add("red");
     suitTop.classList.add("red");
     suitBot.classList.add("red");
-
-
   } else if (suitNum == 1) {
     suitSimbol = "♥";
     num.classList.add("red");
@@ -37,8 +35,14 @@ const suitsNumberGenerator = () => {
     num.classList.add("red");
   } else if (suitNum == 2) {
     suitSimbol = "♠";
+    num.classList.remove("red");
+    suitTop.classList.remove("red");
+    suitBot.classList.remove("red");
   } else {
     suitSimbol = "♣";
+    num.classList.remove("red");
+    suitTop.classList.remove("red");
+    suitBot.classList.remove("red");
   }
 
   suitTop.innerHTML = suitSimbol;
@@ -47,4 +51,9 @@ const suitsNumberGenerator = () => {
   // [...suit].forEach((tag) => {
   //   tag.innerHTML = suitSimbol;
   // });
+};
+
+const init = () => {
+  suitsNumberGenerator();
+  cardNumberGenerator();
 };

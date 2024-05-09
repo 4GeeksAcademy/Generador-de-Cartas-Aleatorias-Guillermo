@@ -4,7 +4,7 @@ let suitBot = document.querySelector(".card-footer");
 
 const cardNumberGenerator = () => {
   let randomNum = Math.floor(Math.random() * 12) + 1;
-  num.innerHTML = randomNum >= 11 ? ["J", "Q", "K"][randomNum - 11] : randomNum;
+  num.innerHTML = randomNum >= 11 ? ["J", "Q", "K"][Math.floor(Math.random() * 3)] : randomNum;
 };
 
 const suitsNumberGenerator = () => {
@@ -14,7 +14,7 @@ const suitsNumberGenerator = () => {
   let suitSimbol = suits[suitNum];
   let color = colors[suitNum];
 
-  [num, suitTop, suitBot].forEach(el => {
+  [num, suitTop, suitBot].forEach((el) => {
     el.classList.remove("red");
     if (color) el.classList.add(color);
   });
@@ -23,7 +23,7 @@ const suitsNumberGenerator = () => {
   suitBot.innerHTML = suitSimbol;
 };
 
-const init = () =>{
+const init = () => {
   suitsNumberGenerator();
   cardNumberGenerator();
 };

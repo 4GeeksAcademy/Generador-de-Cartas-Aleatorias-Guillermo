@@ -3,8 +3,8 @@ let suitTop = document.querySelector(".card-header");
 let suitBot = document.querySelector(".card-footer");
 
 const cardNumberGenerator = () => {
-  let randomNum = Math.floor(Math.random() * 12) + 1;
-  num.innerHTML = randomNum >= 11 ? ["J", "Q", "K"][Math.floor(Math.random() * 3)] : randomNum;
+  let randomNum = Math.floor(Math.random() * 13) + 1;
+  num.innerHTML = randomNum >= 11 ? ["J", "Q", "K"][randomNum-11] : randomNum;
 };
 
 const suitsNumberGenerator = () => {

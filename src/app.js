@@ -1,7 +1,7 @@
 let num = document.querySelector("#cardNumber");
 
 const cardNumberGenerator = () => {
-  let randomNum = Math.floor(Math.random() * 12) + 1;
+  let randomNum = Math.floor(Math.random() * 13) + 1;
   let figures = "";
 
   if (randomNum == 11) {

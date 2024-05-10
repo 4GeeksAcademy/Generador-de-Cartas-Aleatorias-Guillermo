@@ -16,15 +16,14 @@ let suitTop = document.querySelector(".card-header");
 let suitBot = document.querySelector(".card-footer");
 let suitSimbol = "";
 
-
 const suitsGenerator = () => {
-  let suitNum = Math.floor(Math.random() * 4);
+  let randomSuit = Math.floor(Math.random() * 4);
 
-  if (suitNum == 0) {
+  if (randomSuit == 0) {
     suitSimbol = "♦";
-  } else if (suitNum == 1) {
+  } else if (randomSuit == 1) {
     suitSimbol = "♥";
-  } else if (suitNum == 2) {
+  } else if (randomSuit == 2) {
     suitSimbol = "♠";
   } else {
     suitSimbol = "♣";

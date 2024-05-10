@@ -16,6 +16,14 @@
     <div
       class="container-fluid d-flex flex-column align-items-center justify-content-center"
     >
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="formatH">Alto</span>
+      <input type="text" placeholder="rem" id="altura" class="form-control" value="">
+      <span class="input-group-text" id="formatW">Ancho</span>
+      <input type="text" placeholder="rem" id="anchura" class="form-control" value="">
+    </div>
+    <button type="button" onclick="newSize()" class="btn btn-info">Aplicar</button>
+
       <div class="card my-5 col-5">
         <div class="card-header fs-1 bg-white border-0">
           0
@@ -30,6 +38,8 @@
       <button onclick="init()" type="button" class="btn btn-primary">
         Barajar Cartas
       </button>
+    </br>
+      <span class="badge rounded-pill text-bg-warning">10</span>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

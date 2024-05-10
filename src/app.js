@@ -2,8 +2,9 @@ let num = document.querySelector("#cardNumber");
 
 const cardNumberGenerator = () => {
   let randomNum = Math.floor(Math.random() * 13) + 1;
-
-  if (randomNum == 11) {
+  if (randomNum == 1) {
+    num.innerHTML = "A";
+  } else if (randomNum == 11) {
     num.innerHTML = "J";
   } else if (randomNum == 12) {
     num.innerHTML = "Q";
@@ -48,4 +49,25 @@ const init = () => {
   suitsGenerator();
   cardNumberGenerator();
   colorSelector();
+};
+
+let temp = 10;
+let contador = document.querySelector(".badge");
+
+const temporizador = () => {
+  if (--temp == 0) {
+    init();
+    temp = 10;
+  }
+  contador.innerHTML = temp;
+};
+
+setInterval(temporizador, 1000);
+
+const newSize = () => {
+  let height = parseInt(document.querySelector("#altura").value);
+  let width = parseInt(document.querySelector("#anchura").value);
+  let cardSize = document.querySelector(".card");
+  cardSize.style.height = `${height}rem`;
+  cardSize.style.width = `${width}rem`;
 };

@@ -12,13 +12,14 @@ const cardNumberGenerator = () => {
   } else num.innerHTML = randomNum;
 };
 
-//let suit = document.querySelectorAll(".card-header, .card-footer");
+let suitTop = document.querySelector(".card-header");
+let suitBot = document.querySelector(".card-footer");
+let suitSimbol = "";
+
 
 const suitsGenerator = () => {
-  let suitTop = document.querySelector(".card-header");
-  let suitBot = document.querySelector(".card-footer");
   let suitNum = Math.floor(Math.random() * 4);
-  let suitSimbol = "";
+
   if (suitNum == 0) {
     suitSimbol = "♦";
   } else if (suitNum == 1) {
@@ -29,6 +30,10 @@ const suitsGenerator = () => {
     suitSimbol = "♣";
   }
 
+  [suitTop, suitBot].forEach((suit) => (suit.innerHTML = suitSimbol));
+};
+
+const colorSelector = () => {
   if (suitSimbol == "♥" || suitSimbol == "♦") {
     num.classList.add("red");
     suitTop.classList.add("red");
@@ -38,15 +43,10 @@ const suitsGenerator = () => {
     suitTop.classList.remove("red");
     suitBot.classList.remove("red");
   }
-
-  [suitTop, suitBot].forEach((suit) => (suit.innerHTML = suitSimbol));
-
-  // [...suit].forEach((tag) => {
-  //   tag.innerHTML = suitSimbol;
-  // });
 };
 
 const init = () => {
   suitsGenerator();
   cardNumberGenerator();
+  colorSelector();
 };

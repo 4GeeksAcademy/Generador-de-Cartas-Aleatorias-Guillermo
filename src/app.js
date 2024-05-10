@@ -39,8 +39,7 @@ const suitsGenerator = () => {
     suitBot.classList.remove("red");
   }
 
-  [suitTop, suitBot].forEach(suit => suit.innerHTML = suitSimbol);
-
+  [suitTop, suitBot].forEach((suit) => (suit.innerHTML = suitSimbol));
 
   // [...suit].forEach((tag) => {
   //   tag.innerHTML = suitSimbol;

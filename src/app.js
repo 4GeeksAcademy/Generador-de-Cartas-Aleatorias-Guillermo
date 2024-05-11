@@ -1,3 +1,4 @@
+//Numero de carta
 let num = document.querySelector("#cardNumber");
 
 const cardNumberGenerator = () => {
@@ -13,6 +14,7 @@ const cardNumberGenerator = () => {
   } else num.innerHTML = randomNum;
 };
 
+//Palo
 let suitTop = document.querySelector(".card-header");
 let suitBot = document.querySelector(".card-footer");
 let suitSimbol = "";
@@ -33,6 +35,7 @@ const suitsGenerator = () => {
   [suitTop, suitBot].forEach((suit) => (suit.innerHTML = suitSimbol));
 };
 
+//Color
 const colorSelector = () => {
   if (suitSimbol == "♥" || suitSimbol == "♦") {
     num.classList.add("red");
@@ -45,12 +48,7 @@ const colorSelector = () => {
   }
 };
 
-const init = () => {
-  suitsGenerator();
-  cardNumberGenerator();
-  colorSelector();
-};
-
+//Temporizador
 let temp = 10;
 let contador = document.querySelector(".badge");
 
@@ -64,10 +62,24 @@ const temporizador = () => {
 
 setInterval(temporizador, 1000);
 
+//Tamaño
+let cardSize = document.querySelector(".card");
+
 const newSize = () => {
   let height = parseInt(document.querySelector("#altura").value);
   let width = parseInt(document.querySelector("#anchura").value);
-  let cardSize = document.querySelector(".card");
   cardSize.style.height = `${height}rem`;
   cardSize.style.width = `${width}rem`;
+};
+
+const resetSize = () => {
+  cardSize.style.height = `29.375rem`;
+  cardSize.style.width = `19.688rem`;
+};
+
+//Agrupamos funciones
+const init = () => {
+  suitsGenerator();
+  cardNumberGenerator();
+  colorSelector();
 };

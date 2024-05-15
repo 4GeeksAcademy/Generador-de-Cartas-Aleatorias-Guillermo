@@ -75,6 +75,8 @@ const newSize = () => {
 const resetSize = () => {
   cardSize.style.height = `29.375rem`;
   cardSize.style.width = `19.688rem`;
+  document.getElementById("altura").value = "";
+  document.getElementById("anchura").value = "";
 };
 
 //Agrupamos funciones
